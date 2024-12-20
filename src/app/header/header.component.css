@@ -1,0 +1,15 @@
+.headerLink {
+    text-decoration: none;
+    color: #e7f1ff !important;
+    font-family: 'Lato';
+    font-size: 1.5em;
+
+}
+
+.headerLink:hover {
+    text-decoration: none;
+    color: #f1cb59 !important;
+    font-family: 'Lato';
+    font-size: 24;
+    cursor: pointer;
+}

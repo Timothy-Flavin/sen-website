@@ -1,0 +1,49 @@
+.body {
+    display: flex;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 1%;
+    width: 25%;
+}
+
+.profile-item {
+    width: 90%;
+    float: right;
+    text-align: left;
+    border-top: #323436;
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin-right: 10%;
+}
+
+a:link {
+    text-decoration: none;
+    color: #aaceff;
+    font-family: 'Lato';
+    font-size: 1.5em;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #aaceff;
+    font-family: 'Lato';
+    font-size: 1.5em;
+}
+
+
+
+a:hover {
+    text-decoration: none;
+    color: #f1cb59;
+    font-family: 'Lato';
+    font-size: 24;
+}
+
+p {
+    font-size: 18px;
+    font-family: 'Open Sans';
+}
