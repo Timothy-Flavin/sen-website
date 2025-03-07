@@ -1,5 +1,9 @@
 <div id="container" style="background-color: #f1f1e6;">
-  <app-header></app-header>
-  <app-home></app-home>
+  <app-header (stateChange)="handleStateUpdate($event)"></app-header>
+  <app-home *ngIf="state=='home'"></app-home>
+  <app-members *ngIf="state=='students'"></app-members>
+  <app-publications *ngIf="state=='publications'"></app-publications>
+  <app-projects *ngIf="state=='projects'"></app-projects>
+
   <app-footer></app-footer>
 </div>
