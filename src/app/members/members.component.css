@@ -1,0 +1,22 @@
+h3 {
+  transition: color 0.3s ease;
+}
+h3:hover {
+  color: #f1cb59 !important;
+}
+a {
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #f1cb59 !important;
+}
+.student-bio {
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+img {
+  transition: transform 0.3s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
