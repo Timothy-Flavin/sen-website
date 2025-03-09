@@ -7,8 +7,10 @@ interface Student {
   website?: string;
   email: string;
   bio: string;
-  type: 'phd' | 'undergrad';
+  type: 'phd' | 'undergrad' | 'alumni';
   isExpanded: boolean;
+  nextSteps?: string;
+  degree?: 'PhD' | 'BS' | 'MS';
 }
 
 @Component({
@@ -127,6 +129,105 @@ export class MembersComponent {
       bio: 'Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi.',
       type: 'phd',
       isExpanded: false
+    },
+    {
+      name: 'TestAlumni1',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni1@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'BS',
+      nextSteps: 'Assistant Professor at MIT'
+    },
+    {
+      name: 'TestAlumni2',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni2@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'PhD',
+      nextSteps: 'Assistant Professor at MIT'
+    },
+    {
+      name: 'TestAlumni3',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni3@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'MS',
+      nextSteps: 'Assistant Professor at UT'
+    },
+    {
+      name: 'TestAlumni4',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni4@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'BS',
+      nextSteps: 'Assistant Professor at UT'
+    },
+    {
+      name: 'TestAlumni5',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni5@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'PhD',
+      nextSteps: 'Assistant Professor at UT'
+    },
+    {
+      name: 'TestAlumni6',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni6@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'MS',
+      nextSteps: 'Assistant Professor at UT'
+    },
+    {
+      name: 'TestAlumni7',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni7@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'BS',
+      nextSteps: 'Assistant Professor at UT'
+    },
+    {
+      name: 'TestAlumni8',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni8@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'PhD',
+      nextSteps: 'Assistant Professor at UT'
+    },
+    {
+      name: 'TestAlumni9',
+      photo: '/students/default-student.jpg',
+      website: 'https://website.com',
+      email: 'alumni9@example.com',
+      bio: '',
+      type: 'alumni',
+      isExpanded: false,
+      degree: 'MS',
+      nextSteps: 'Assistant Professor at UT'
     }
   ];
 
