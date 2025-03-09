@@ -1,1 +1,37 @@
-<p>members works!</p>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet'>
+<div style="background-color: #f1f1e6; padding: 20px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="font-family: 'Playfair Display'; color: #004b8e; font-size: 2em; margin-bottom: 1em;">PhD Students</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+      <div *ngFor="let student of students" style="background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" [style.display]="student.type === 'phd' ? 'block' : 'none'">
+        <img [src]="student.photo" alt="{{student.name}}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin: 0 auto 15px; display: block;">
+        <h3 (click)="toggleBio(student)" style="font-family: 'Playfair Display'; color: #333; font-size: 1.5em; font-weight: bold; margin: 10px 0; cursor: pointer; text-align: center;">
+          {{student.name}} ▼
+        </h3>
+        <div *ngIf="student.isExpanded" style="margin: 10px 0; font-family: 'Open Sans', sans-serif; color: #333; font-size: 1.1em;">
+          {{student.bio}}
+        </div>
+        <div style="text-align: center; margin-top: 10px;">
+          <a *ngIf="student.website" [href]="student.website" target="_blank" style="color: #004b8e; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 1.1em; margin-right: 15px;">Website</a>
+          <a [href]="'mailto:' + student.email" style="color: #004b8e; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 1.1em;">Email</a>
+        </div>
+      </div>
+    </div>
+    <h2 style="font-family: 'Playfair Display'; color: #004b8e; font-size: 2em; margin: 2em 0 1em;">Undergraduate Students</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+      <div *ngFor="let student of students" style="background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" [style.display]="student.type === 'undergrad' ? 'block' : 'none'">
+        <img [src]="student.photo" alt="{{student.name}}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin: 0 auto 15px; display: block;">
+        <h3 (click)="toggleBio(student)" style="font-family: 'Playfair Display'; color: #333; font-size: 1.5em; font-weight: bold; margin: 10px 0; cursor: pointer; text-align: center;">
+          {{student.name}} ▼
+        </h3>
+        <div *ngIf="student.isExpanded" style="margin: 10px 0; font-family: 'Open Sans', sans-serif; color: #333; font-size: 1.1em;">
+          {{student.bio}}
+        </div>
+        <div style="text-align: center; margin-top: 10px;">
+          <a *ngIf="student.website" [href]="student.website" target="_blank" style="color: #004b8e; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 1.1em; margin-right: 15px;">Website</a>
+          <a [href]="'mailto:' + student.email" style="color: #004b8e; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 1.1em;">Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
