@@ -51,10 +51,10 @@ export class MembersComponent {
     },
     {
       name: 'Timmy Flavin',
-      photo: '/students/default-student.jpg',
-      website: 'https://website.com',
-      email: 'email@utulsa.edu',
-      bio: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      photo: '/students/timface.png',
+      website: 'https://timothy-flavin.github.io/',
+      email: 'timmy-flavin@utulsa.edu',
+      bio: 'Research area: Multi Agent Reinforcement Learning (MARL) for Ad-Hoc Teamplay',
       type: 'phd',
       isExpanded: false
     },
