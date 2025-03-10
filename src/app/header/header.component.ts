@@ -11,7 +11,7 @@ export class HeaderComponent {
   current_page: string = "home"
   pages: string[] = ["home", "publications", "projects", "students", "gallery"]
   @Output() stateChange = new EventEmitter<any>();
-  // When menu buttons are clicked change the page
+  // When menu buttons are clicked change the page https://sites.utulsa.edu/multiagent-systems/
   changeState(target: string) {
     if (this.pages.includes(target)) {
       this.current_page = target

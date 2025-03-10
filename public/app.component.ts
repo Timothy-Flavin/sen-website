@@ -7,6 +7,7 @@ import { MembersComponent } from "../src/app/members/members.component";
 import { NgIf } from '@angular/common';
 import { PublicationsComponent } from "../src/app/publications/publications.component";
 import { ProjectsComponent } from '../src/app/projects/projects.component';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
