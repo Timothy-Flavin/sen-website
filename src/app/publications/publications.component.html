@@ -2,33 +2,52 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container" style="background-color: #f1f1e6; padding: 20px; min-height: 900px;">
     <h2 style="font-family: 'Playfair Display'; color: #004b8e; font-size: 2em; margin-bottom: 1em;">Publications</h2>
-    <div class="row" *ngFor="let publication of publications; index as i" style="margin-bottom: 5px;">
-        <div class="col-md-12"
-            style="background: white; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex;  align-items: center;">
-            <div style="max-width: 20%; padding-left: 1%; padding-right: 1%;">
-                <a [href]="publication.url"
-                    style="color: #004b8e; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 2em; margin-right: 15px;"><i
-                        class="fa">&#xf0f6;</i></a>
-            </div>
-            <div style="width: 100%;">
-                <div
-                    style="font-family: 'Playfair Display'; color: #333; font-size: 1.5em; font-weight: bold; margin: 5px 0;">
-                    {{publication.title}}
-                    <span style="font-weight:normal;" *ngFor="let author of publication.authors">
-                        {{author}},
-                    </span>
-                    <span style="font-weight:normal;">{{publication.publisher}}</span>
-                    <span style="padding-left: 5px; font-size: 1.1em;">
-                        <i *ngIf="get_inactive(i)" class="fa fa-solid fa-caret-right" (click)="update_active(i)"></i>
-                        <i *ngIf="get_active(i)" class="fa fa-solid fa-caret-down" (click)="update_active(i)"></i>
-                    </span>
-                    <span style="font-weight:normal; float: right;">{{publication.date}}</span>
-                </div>
-                <div *ngIf="get_active(i)"
-                    style="margin: 10px 0; font-family: 'Open Sans', sans-serif; color: #333; font-size: 1.1em;">
-                    {{publication.abstract}}</div>
-            </div>
+    <div *ngIf="loading" class="spinner"></div>
+    <div *ngIf="!loading" class="table">
+        <div class="table-header">
+            <span style="padding-left: 5px; padding-right: 15px;">Sort By</span>
+            <span class="sort-option">Date&nbsp;
+                <i *ngIf="ascending" class="fa fa-solid fa-caret-up" (click)="sort_date('desc')"></i>
+                <i *ngIf="!ascending" class="fa fa-solid fa-caret-down" (click)="sort_date('asc')"></i>
+            </span>
+            <span class="sort-option">
+                Project Type
+                <select (change)="update_active_project_type($event)">
+                    <option *ngFor="let project of projects" [value]="project.id">{{project.name}}</option>
+                </select>
+            </span>
         </div>
+        <div class="row" *ngFor="let publication of display_publications; index as i" style="margin: 10px;">
+            <div class="col-md-12"
+                style="background: white; border-radius: 8px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex;  align-items: center;">
+                <div style="max-width: 20%; padding-left: 1%; padding-right: 1%;">
+                    <a [href]="publication.url"
+                        style="color: #004b8e; text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 2em; margin-right: 15px;"><i
+                            class="fa">&#xf0f6;</i></a>
+                </div>
+                <div style="width: 100%;">
+                    <div
+                        style="font-family: 'Playfair Display'; color: #333; font-size: 1.5em; font-weight: bold; margin: 5px 0;">
+                        {{publication.title}}
+                        <span style="font-weight:normal;" *ngFor="let author of publication.authors">
+                            {{author}}.
+                        </span>
+                        <span style="font-weight:normal;">{{publication.publisher}}</span>
+                        <span style="padding-left: 5px; font-size: 1.1em;">
+                            <i *ngIf="get_inactive(i)" class="fa fa-solid fa-caret-right"
+                                (click)="update_active(i)"></i>
+                            <i *ngIf="get_active(i)" class="fa fa-solid fa-caret-down" (click)="update_active(i)"></i>
+                        </span>
+                        <span style="font-weight:normal; float: right;">{{publication.date}}</span>
+                    </div>
+                    <div *ngIf="get_active(i)"
+                        style="margin: 10px 0; font-family: 'Open Sans', sans-serif; color: #333; font-size: 1.1em;">
+                        {{publication.abstract}}</div>
+                </div>
+            </div>
+
+        </div>
+
         <!--<div class="row">
         <div class="col-md-12" >
             <span *ngFor="let author of publication.authors">{{author}},</span>
